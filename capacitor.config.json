@@ -1,0 +1,13 @@
+{
+  "appId": "com.okankarasoglu.ionicYollaYemek",
+  "appName": "ionicYollaYemek",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

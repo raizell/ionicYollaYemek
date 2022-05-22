@@ -1,0 +1,44 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-title>
+      Ürün Takibi
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="urunEkle()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="logoutalert()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content [fullscreen]="true">
+
+  <ion-item *ngFor="let kayit of kayitlar">
+    
+    <ion-thumbnail slot="start">
+      <img src="assets/img/logo.png">
+    </ion-thumbnail>
+    <ion-label style="font-size: 9pt;">
+      ID : {{kayit.payload.doc.id}}
+      <br>{{kayit.payload.doc.data().yemek}} 
+      <br>Fiyat: {{kayit.payload.doc.data().fiyat}} TL
+      <br>Adet: {{kayit.payload.doc.data().adet}}
+      <br>Eklenme Tarihi: {{kayit.payload.doc.data().tarih * 1000 | date:'dd:MM:yyyy'}}</ion-label>
+    <ion-button shape="round" color="dark" size="small" (click)="detaylar()">
+      <ion-icon size="small" slot="icon-only" name="alert-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" color="success" size="small" (click)="presentAlertPrompt(kayit)">
+      <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" color="danger" size="small" (click)="presentAlertConfirm(kayit.payload.doc.id)">
+      <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+
+</ion-content>

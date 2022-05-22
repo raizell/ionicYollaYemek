@@ -1,0 +1,22 @@
+#welcome{
+    --background: var(--ion-color-warning);
+    h1{
+        font-size:52px;
+        margin-top:50px
+    }
+    .marginTop{
+        margin-top: 150px;
+    }
+    .logo{
+        height: 300px;
+    }
+    .ion-color-signup {
+        --ion-color-base: var(--ion-color-signup);
+        --ion-color-base-rgb: var(--ion-color-signup-rgb);
+        --ion-color-contrast: var(--ion-color-signup-contrast);
+        --ion-color-contrast-rgb: var(--ion-color-signup-contrast-rgb);
+        --ion-color-shade: var(--ion-color-signup-shade);
+        --ion-color-tint: var(--ion-color-signup-tint);
+      }
+
+}

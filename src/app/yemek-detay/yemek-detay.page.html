@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detaylar</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="donus()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let kayit of kayitlar">
+    <ion-item>
+      <ion-label>ID : {{kayit.payload.doc.id}}</ion-label>
+    </ion-item>
+    <ion-card-content>
+      <ion-label>Ürün Adı: {{kayit.payload.doc.data().yemek}}</ion-label>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Adet: {{kayit.payload.doc.data().adet}}</ion-label>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Fiyat: {{kayit.payload.doc.data().fiyat}}</ion-label>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Eklenme Tarihi: {{kayit.payload.doc.data().tarih * 1000 | date:'dd:MM:yyyy HH:mm:ss'}}</ion-label>
+    </ion-card-content>
+    <ion-card-content>
+    <ion-button shape="round" color="success" size="small" (click)="presentAlertPrompt(kayit)">
+      <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+  
+    </ion-button>
+    <ion-button shape="round" color="danger" size="small" (click)="presentAlertConfirm(kayit.payload.doc.id)">
+      <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+    </ion-card-content>
+  </ion-card> 
+</ion-content>
